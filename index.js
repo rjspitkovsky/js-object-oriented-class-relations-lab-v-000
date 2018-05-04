@@ -14,9 +14,17 @@ class Driver {
     })
   }
   passengers() {
-  return  store.passengers.filter(passenger => {
-      return passenger.driverId === this.id
+    const passengers = []
+    this.trips().forEach(function(trip){
+      passengers.push(trip.passengerId)
     })
+    return store.passengers.filter(passenger => {
+      passengers.include(passenger.id)
+    })
+
+  // return  store.passengers.filter(passenger => {
+  //     return passenger.driverId === this.id
+  //   })
   }
 }
 
