@@ -21,10 +21,6 @@ class Driver {
     return store.passengers.filter(passenger => {
     return  passengers.includes(passenger.id)
     })
-
-  // return  store.passengers.filter(passenger => {
-  //     return passenger.driverId === this.id
-  //   })
   }
 }
 
@@ -41,9 +37,16 @@ class Passenger {
     })
   }
   drivers() {
-    return store.drivers.filter(driver => {
-      return driver.passengerId === this.id
+    const drivers = []
+    this.trips().forEach(function(trip){
+      drivers.push(trip.driverId)
     })
+    return store.drivers.filter(driver => {
+    return  drivers.includes(driver.id)
+    })
+    // return store.drivers.filter(driver => {
+    //   return driver.passengerId === this.id
+    // })
   }
 }
 
