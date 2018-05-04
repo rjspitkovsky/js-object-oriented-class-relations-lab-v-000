@@ -44,9 +44,6 @@ class Passenger {
     return store.drivers.filter(driver => {
     return  drivers.includes(driver.id)
     })
-    // return store.drivers.filter(driver => {
-    //   return driver.passengerId === this.id
-    // })
   }
 }
 
