@@ -41,10 +41,10 @@ class Passenger {
 
 let tripId = 0
 class Trip {
-  constructor(driver, passenger) {
+  constructor(driver_argument, passenger_argument) {
     this.id = ++tripId
-    this.driverId = driver
-    this.passengerId = passenger
+    this.driverId = return store.drivers.find(driver => driver.id === driver_argument.id)
+    this.passengerId = return store.passengers.find(passenger => passenger.id === passenger_argument.id)
     store.trips.push(this)
   }
 
