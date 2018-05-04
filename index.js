@@ -43,8 +43,8 @@ let tripId = 0
 class Trip {
   constructor(driver, passenger) {
     this.id = ++tripId
-    this.driver = driverId(driver)
-    this.passenger = passengerId(passenger)
+    this.driverId = driverId(driver)
+    this.passengerId = passengerId(passenger)
     store.trips.push(this)
   }
   driverId(driver_argument) {
