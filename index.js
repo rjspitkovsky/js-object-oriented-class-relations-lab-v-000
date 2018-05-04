@@ -19,7 +19,7 @@ class Driver {
       passengers.push(trip.passengerId)
     })
     return store.passengers.filter(passenger => {
-      passengers.include(passenger.id)
+    return  passengers.includes(passenger.id)
     })
 
   // return  store.passengers.filter(passenger => {
