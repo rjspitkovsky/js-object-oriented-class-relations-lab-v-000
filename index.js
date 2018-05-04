@@ -43,18 +43,9 @@ let tripId = 0
 class Trip {
   constructor(driver, passenger) {
     this.id = ++tripId
-    this.driverId = find_driver(driver)
+    this.driverId = driver()
     this.passengerId = find_passenger(passenger)
     store.trips.push(this)
   }
-  find_driver(driver_argument) {
-    store.drivers.find(driver => {
-      return driver.id === driver_argument.id
-    })
-  }
-  find_passenger(passenger_argument) {
-    store.passengers.find(passenger => {
-      return passenger.id === passenger_argument.id
-    })
-  }
+
 }
